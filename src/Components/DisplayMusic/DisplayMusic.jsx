@@ -4,7 +4,7 @@ const DisplayMusic = (props) => {
     return (
         <div className="border-t">
             <h3>Music Library</h3>
-            <table>
+            <table id='music-library'>
                 <thead>
                     <tr>
                         <th>Title</th>
