@@ -2,9 +2,9 @@ import './DisplayMusic.css'
 
 const DisplayMusic = (props) => {
     return (
-        <div className="border-t">
+        <div className="border-t box">
             <h3>Music Library</h3>
-            <table id='music-library'>
+            <table className='table' id='music-library'>
                 <thead>
                     <tr>
                         <th>Title</th>

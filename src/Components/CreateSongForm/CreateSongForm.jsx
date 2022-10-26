@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import './CreateSongForm.css'
 
 const CreateSong = (props) => {
     const [title, setTitle] = useState('');
@@ -21,7 +21,7 @@ const CreateSong = (props) => {
     }
 
     return ( 
-        <div className='border-t'>
+        <div className='container-fluid border-t box'>
         <form onSubmit={handleSubmit}>
             <div><h3>Add New Song To Music Library</h3></div>
             <div><label>Title</label></div>

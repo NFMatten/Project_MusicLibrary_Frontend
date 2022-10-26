@@ -25,7 +25,7 @@ function App() {
   }
 
   return (
-    <div>
+    <div className="container-fluid">
       <NavBar/>
       <CreateSongForm createNewSong={createNewSong}/>
       <SearchBar parentSongs={songs}/>
