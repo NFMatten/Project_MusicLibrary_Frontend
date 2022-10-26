@@ -1,9 +1,7 @@
-import './DisplayMusic.css'
-
 const DisplayMusic = (props) => {
     return (
-        <div className="border-t box">
-            <h3>Music Library</h3>
+        <div>
+            <h3 className="d-flex justify-content-center">Music Library</h3>
             <table className='table' id='music-library'>
                 <thead>
                     <tr>
@@ -33,6 +31,3 @@ const DisplayMusic = (props) => {
 }
 
 export default DisplayMusic;
-
-// TODO:
-//      Table Styling

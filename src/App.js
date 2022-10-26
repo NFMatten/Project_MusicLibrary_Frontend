@@ -1,9 +1,10 @@
-import NavBar from "./Components/NavBar/NavBar";
 import React, { useEffect ,useState } from 'react';
-import DisplayMusic from "./Components/DisplayMusic/DisplayMusic";
 import axios from "axios";
+import NavBar from "./Components/NavBar/NavBar";
+import DisplayMusic from "./Components/DisplayMusic/DisplayMusic";
 import CreateSongForm from "./Components/CreateSongForm/CreateSongForm";
 import SearchBar from "./Components/SearchBar/SearchBar";
+import "./App.css"
 
 
 function App() {
@@ -25,12 +26,26 @@ function App() {
   }
 
   return (
-    <div className="container-fluid">
+    <div>
       <NavBar/>
-      <CreateSongForm createNewSong={createNewSong}/>
-      <SearchBar parentSongs={songs}/>
-      <DisplayMusic parentSongs={songs}/>
+      <div className='container-fluid d-flex justify-content-center'>
+        <div className="col-sm-8">
+          <div className='row d-flex justify-content-center'>
+              <div className="col-sm-5 border-box">
+                <CreateSongForm createNewSong={createNewSong}/>
+              </div>
+            
+              <div className="col-sm-5 border-box">
+                <SearchBar parentSongs={songs}/>
+              </div>
+          </div>
+          <div className="col border-box">
+            <DisplayMusic parentSongs={songs}/>
+          </div>
+        </div>
+      </div>
     </div>
+    
   );
 }
 

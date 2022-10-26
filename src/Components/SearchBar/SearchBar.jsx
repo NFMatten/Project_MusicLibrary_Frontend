@@ -1,6 +1,3 @@
-import './SearchBar.css'
-
-
 const SearchBar = (props) => {
 
     function filteredResults() {
@@ -40,15 +37,40 @@ const SearchBar = (props) => {
 
     return ( 
         <div className='border-t box'>
-            <form className='form-control'>
-                <input type='text' id='inputToFilter' onKeyUp={filteredResults} placeholder='Filter entire table by...' title='Filter music library by... '/>
-                <input type='text' id='title' onKeyUp={() => filterByColumn("title", 0)} placeholder='Filter by Title...' />
-                <input type='text' id='artist' onKeyUp={() => filterByColumn("artist", 1)} placeholder='Filter by Artist...' />
-                <input type='text' id='album' onKeyUp={() => filterByColumn("album", 2)} placeholder='Filter by Album...' />
-                <input type='text' id='release-date' onKeyUp={() => filterByColumn("release-date", 3)} placeholder='Filter by Release Date..' />
-                <input type='text' id='genre' onKeyUp={() => filterByColumn("genre", 4)} placeholder='Filter by Genre...' />
-            </form>
+            <div className="col">
+                <h3 className="d-flex justify-content-center">Search and Filter</h3>
+            <form>
+                <div className="row spacing padding-lr">
+                    <label className='col-sm col-form-label label-styling'>Filter Entire Table</label>
+                    <input className='col-sm-8 form-control' type='text' id='inputToFilter' onKeyUp={filteredResults} placeholder='Filter entire table by...' title='Filter music library by... '/>
+                </div>
 
+                <div className="row spacing padding-lr">
+                    <label className='col-sm col-form-label label-styling'>Filter By Title</label>
+                    <input className='col-sm-8 form-control' type='text' id='title' onKeyUp={() => filterByColumn("title", 0)} placeholder='Name of Title' />
+                </div>
+                <div className="row spacing padding-lr">
+                    <label className='col-sm col-form-label label-styling'>Filter By Artist</label>
+                    <input className='form-control' type='text' id='artist' onKeyUp={() => filterByColumn("artist", 1)} placeholder='Artist Name' />
+                </div>
+
+                <div className="row spacing padding-lr">
+                    <label className='col-sm col-form-label label-styling'>Filter By Album</label>
+                    <input className='form-control' type='text' id='album' onKeyUp={() => filterByColumn("album", 2)} placeholder='Album Name' />
+                </div>
+
+                <div className="row spacing padding-lr">
+                    <label className='col-sm col-form-label label-styling'>Filter By Date</label>
+                    <input className='form-control' type='text' id='release-date' onKeyUp={() => filterByColumn("release-date", 3)} placeholder='Release Date' />
+                </div>
+
+                <div className="row spacing padding-lr">
+                    <label className='col-sm col-form-label label-styling'>Filter By Genre</label>
+                    <input className='form-control' type='text' id='genre' onKeyUp={() => filterByColumn("genre", 4)} placeholder='Genre' />
+                </div>
+
+            </form>
+            </div>
         </div>
      );
 }

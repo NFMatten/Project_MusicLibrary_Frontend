@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import './CreateSongForm.css'
 
 const CreateSong = (props) => {
     const [title, setTitle] = useState('');
@@ -21,33 +20,38 @@ const CreateSong = (props) => {
     }
 
     return ( 
-        <div className='container-fluid border-t box'>
         <form onSubmit={handleSubmit}>
-            <div><h3>Add New Song To Music Library</h3></div>
-            <div><label>Title</label></div>
-            <div><input className='form-control' type='text' placeholder='Enter Song Title' value={title} onChange={(event) => setTitle(event.target.value)} /> </div>
+            <div><h3 className='d-flex justify-content-center'>Add New Song To Music Library</h3></div>
+            <div className='col'>
+                <div className='row spacing padding-lr'>
+                    <label className='col-sm-2 col-form-label label-styling'>Title</label>
+                    <input className='col-sm-8 form-control' type='text' placeholder='Enter Song Title' value={title} onChange={(event) => setTitle(event.target.value)} />
+                </div>
 
-            <div><label>Artist</label></div>
-            <div><input className='form-control' type='text' placeholder='Enter Artist Name' value={artist} onChange={(event) => setArtist(event.target.value)} /></div>
+                <div className='row spacing padding-lr'>
+                    <label className='col-sm-2 col-form-label label-styling'>Artist</label>
+                    <input className='col-sm-8 form-control' type='text' placeholder='Enter Artist Name' value={artist} onChange={(event) => setArtist(event.target.value)} />
+                </div>
 
-            <div><label>Album</label></div>
-            <div><input className='form-control' type='text' placeholder='Enter Album Name' value={album} onChange={(event) => setAlbum(event.target.value)}/></div>
+                <div className='row spacing padding-lr'>
+                    <label className='col-sm-2 col-form-label label-styling'>Album</label>
+                    <input className='col-sm-8 form-control' type='text' placeholder='Enter Album Name' value={album} onChange={(event) => setAlbum(event.target.value)}/>
+                </div>
 
-            <div><label>Release Date</label></div>
-            <div><input className='form-control' type='date' value={releaseDate} onChange={(event) => setReleaseDate(event.target.value)}/></div>
+                <div className='row spacing padding-lr'>
+                    <label className='col-sm-2 col-form-label label-styling'>Release Date</label>
+                    <input className='col-sm-8 form-control' type='date' value={releaseDate} onChange={(event) => setReleaseDate(event.target.value)}/>
+                </div>
 
-            <div><label>Genre</label></div>
-            <div><input className='form-control' type='text' placeholder='Enter Genre' value={genre} onChange={(event) => setGenre(event.target.value)}/></div>
+                <div className='row spacing padding-lr'>
+                    <label className='col-sm-2 col-form-label label-styling'>Genre</label>
+                    <input className='col-sm-8 form-control' type='text' placeholder='Enter Genre' value={genre} onChange={(event) => setGenre(event.target.value)}/>
+                </div>
 
-            <div><button className='btn btn-primary' type='submit'>Add Song</button></div>
+                <div className='d-flex justify-content-end'><button className='btn btn-primary' type='submit'>Add Song</button></div>
+            </div>
         </form>
-        </div>
      );
 }
  
 export default CreateSong;
-
-
-
-// TODO:
-//      Styling 
